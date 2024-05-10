@@ -1,11 +1,12 @@
 # Overwatch-2-Roster-Manager
 
-This is an Overwatch 2 Roster Manager. Key features include:
-randomly generate and create rosters based on three archetypes: Dive, Brawl, and Poke.
+<!-- One paragraph of **bolded text** for a description of the project. -->
 
-# Project Name
+\*\*This is a program that creates and manages a roster of Overwatch 2 heroes. Key features include:
 
-One paragraph of **bolded text** for a description of the project.
+- Randomly generate rosters based on three archetypes: Dive, Brawl, and Poke
+- Add and remove heroes from rosters
+- Print the names of the characters in a roster and their role as well details about each Archetype\*\*
 
 ## Table of Contents
 
