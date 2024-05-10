@@ -33,7 +33,7 @@ public abstract class OWCompTemplate implements OWCompInterface {
     public void addHero(Hero hero) throws Exception {
 
         if (!isValid(hero)) {
-            throw new CustomExceptions.InvalidHeroException("Error: Tried to add an invalid Hero");
+            throw new CustomExceptions.InvalidHeroException("Tried to add an invalid Hero");
         }
 
         ArrayList<Hero> roleRoster = getRosterForRole(hero.getRole());
@@ -42,10 +42,10 @@ public abstract class OWCompTemplate implements OWCompInterface {
             if (!roleRoster.contains(hero)) {
                 roleRoster.add(hero);
             } else {
-                throw new CustomExceptions.HeroDuplicateException("Error: Hero already on roster");
+                throw new CustomExceptions.HeroDuplicateException("Hero already on roster");
             }
         } else {
-            throw new CustomExceptions.RoleFullException("Error: Current role on roster is full");
+            throw new CustomExceptions.RoleFullException("Current role on roster is full");
         }
     }
 
@@ -53,7 +53,7 @@ public abstract class OWCompTemplate implements OWCompInterface {
     public void removeHero(Hero hero) throws Exception {
 
         if (!isValid(hero)) {
-            throw new CustomExceptions.InvalidHeroException("Error: Tried to remove an invalid Hero");
+            throw new CustomExceptions.InvalidHeroException("Tried to remove an invalid Hero");
         }
 
         ArrayList<Hero> roleRoster = getRosterForRole(hero.getRole());
@@ -61,7 +61,7 @@ public abstract class OWCompTemplate implements OWCompInterface {
         boolean removed = roleRoster.remove(hero);
         if (!removed) {
             throw new CustomExceptions.HeroNotOnRosterException(
-                    "Error: Failed to remove Hero from roster since Hero not on current roster");
+                    "Failed to remove Hero from roster since Hero not on current roster");
         }
     }
 
@@ -143,7 +143,7 @@ public abstract class OWCompTemplate implements OWCompInterface {
             case SUPPORT:
                 return currentSupports;
             default:
-                throw new AssertionError("Error: Unknown role");
+                throw new AssertionError(" Unknown role");
         }
     }
 
@@ -156,7 +156,7 @@ public abstract class OWCompTemplate implements OWCompInterface {
             case SUPPORT:
                 return MAX_SUPPORTS;
             default:
-                throw new AssertionError("Error: Cannot calculate max size due to unknown role");
+                throw new AssertionError(" Cannot calculate max size due to unknown role");
         }
     }
 

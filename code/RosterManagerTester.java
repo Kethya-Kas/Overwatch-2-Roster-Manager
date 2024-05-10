@@ -3,44 +3,44 @@ public class RosterManagerTester {
 
         // -----------------------Creating Valid Dive rosters----------------
 
-        // OWRoster diveRoster = new OWRoster(Archetype.DIVE);
+        OWRoster diveRoster = new OWRoster(Archetype.DIVE);
 
-        // diveRoster.printCompDetails();
-        // diveRoster.generateRandomRoster();
-        // diveRoster.printRoster();
-        // diveRoster.clearRoster();
-        // System.out.println("Cleared randomly generated Dive roster!");
-        // System.out.println();
+        diveRoster.printCompDetails();
+        diveRoster.generateRandomRoster();
+        diveRoster.printRoster();
+        diveRoster.clearRoster();
+        System.out.println("Cleared randomly generated Dive roster!");
+        System.out.println();
 
-        // Hero winston = new Hero("Winston", Role.TANK);
+        Hero winston = new Hero("Winston", Role.TANK);
         Hero tracer = new Hero("Tracer", Role.DAMAGE);
-        // Hero genji = new Hero("Genji", Role.DAMAGE);
-        // Hero ana = new Hero("Ana", Role.SUPPORT);
-        // Hero brigitte = new Hero("Brigitte", Role.SUPPORT);
+        Hero genji = new Hero("Genji", Role.DAMAGE);
+        Hero ana = new Hero("Ana", Role.SUPPORT);
+        Hero brigitte = new Hero("Brigitte", Role.SUPPORT);
 
-        // System.out.println("Creating valid Dive roster!");
-        // System.out.println();
+        System.out.println("Creating valid Dive roster!");
+        System.out.println();
 
-        // try {
+        try {
 
-        // diveRoster.addHero(winston); // created a valid Dive roster
-        // diveRoster.addHero(tracer);
-        // diveRoster.addHero(genji);
-        // diveRoster.addHero(ana);
-        // diveRoster.addHero(brigitte);
+            diveRoster.addHero(winston); // created a valid Dive roster
+            diveRoster.addHero(tracer);
+            diveRoster.addHero(genji);
+            diveRoster.addHero(ana);
+            diveRoster.addHero(brigitte);
 
-        // diveRoster.removeHero(ana);
-        // diveRoster.addHero(ana);
+            diveRoster.removeHero(ana);
+            diveRoster.addHero(ana);
 
-        // } catch (Exception e) {
-        // System.out.println(e.getMessage());
-        // }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
-        // diveRoster.printRoster();
+        diveRoster.printRoster();
 
-        // diveRoster.clearRoster();
-        // System.out.println("Cleared valid dive roster!");
-        // System.out.println();
+        diveRoster.clearRoster();
+        System.out.println("Cleared valid dive roster!");
+        System.out.println();
 
         // -----------------------Creating Invalid Brawl rosters----------------
 
@@ -48,7 +48,7 @@ public class RosterManagerTester {
 
         brawlRoster.printCompDetails();
 
-        Hero winston = new Hero("Winston", Role.TANK);
+        Hero doomfist = new Hero("Doomfist", Role.TANK);
         Hero mei = new Hero("Mei", Role.DAMAGE);
         Hero sojourn = new Hero("Sojourn", Role.DAMAGE);
         Hero baptiste = new Hero("Baptiste", Role.SUPPORT);
@@ -59,7 +59,7 @@ public class RosterManagerTester {
 
         try {
             try {
-                brawlRoster.addHero(winston); // throws InvalidHeroException since Winston is not a brawl Tank
+                brawlRoster.addHero(doomfist); // throws InvalidHeroException since Winston is not a brawl Tank
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
@@ -93,6 +93,7 @@ public class RosterManagerTester {
                 System.err.println(e.getMessage());
             }
         } finally {
+            System.out.println();
             brawlRoster.printRoster();
         }
     }
