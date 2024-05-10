@@ -6,27 +6,27 @@ import java.util.Random;
 
 public abstract class OWCompTemplate implements OWCompInterface {
 
-    protected ArrayList<Hero> availableHeroes;
-    protected Map<Role, ArrayList<Hero>> availableHeroesByRole;
-    protected HashMap<String, Role> availableHeroesInfoMap;
-    private ArrayList<Hero> currentTank;
+    public ArrayList<Hero> availableHeroes;
+    public Map<Role, ArrayList<Hero>> availableHeroesByRole;
+    public HashMap<String, Role> availableHeroesInfoMap;
+    private ArrayList<Hero> currentTanks;
     private ArrayList<Hero> currentDPS;
     private ArrayList<Hero> currentSupports;
 
     public OWCompTemplate() {
-        currentTank = new ArrayList<>();
+        currentTanks = new ArrayList<>();
         currentDPS = new ArrayList<>();
         currentSupports = new ArrayList<>();
         availableHeroes = new ArrayList<>();
         availableHeroesInfoMap = new HashMap<>();
         availableHeroesByRole = new EnumMap<>(Role.class);
 
-        initializePools(); // abstract method to be overridden
+        initializePools();
     }
 
     @Override
     public int getCurrentRosterSize() {
-        return currentTank.size() + currentDPS.size() + currentSupports.size();
+        return currentTanks.size() + currentDPS.size() + currentSupports.size();
     }
 
     @Override
@@ -76,16 +76,22 @@ public abstract class OWCompTemplate implements OWCompInterface {
         ArrayList<Hero> damagePool = new ArrayList<>(availableHeroesByRole.get(Role.DAMAGE));
         ArrayList<Hero> supportPool = new ArrayList<>(availableHeroesByRole.get(Role.SUPPORT));
 
-        currentTank.add(getRandomHero(tankPool, random));
-        currentDPS.add(getRandomHero(damagePool, random));
-        currentDPS.add(getRandomHero(damagePool, random));
-        currentSupports.add(getRandomHero(supportPool, random));
-        currentSupports.add(getRandomHero(supportPool, random));
+        for (int i = 0; i < MAX_TANKS; i++) {
+            currentTanks.add(getRandomHero(tankPool, random));
+        }
+
+        for (int i = 0; i < MAX_DPS; i++) {
+            currentDPS.add(getRandomHero(damagePool, random));
+        }
+
+        for (int i = 0; i < MAX_SUPPORTS; i++) {
+            currentSupports.add(getRandomHero(supportPool, random));
+        }
     }
 
     @Override
     public void clearRoster() {
-        currentTank.clear();
+        currentTanks.clear();
         currentDPS.clear();
         currentSupports.clear();
     }
@@ -95,12 +101,12 @@ public abstract class OWCompTemplate implements OWCompInterface {
 
         System.out.println("Style: " + this.getClass().getName());
         System.out.print("TANK - ");
-        for (Hero hero : currentTank)
+        for (Hero hero : currentTanks)
             System.out.print(hero.getName() + " ");
 
         System.out.println();
 
-        System.out.print("DPS - ");
+        System.out.print("DAMAGE - ");
         for (Hero hero : currentDPS)
             System.out.print(hero.getName() + " ");
 
@@ -111,14 +117,15 @@ public abstract class OWCompTemplate implements OWCompInterface {
             System.out.print(hero.getName() + " ");
 
         System.out.println();
-        System.out.println("---------------------------");
+        System.out.println("---------------------------------------");
+        System.out.println();
     };
 
     public abstract void printCompDetails();
 
-    protected abstract void initializePools();
+    public abstract void initializePools();
 
-    protected HashMap<String, Role> getAvailableHeroesInfo() {
+    public HashMap<String, Role> getAvailableHeroesInfo() {
 
         for (Hero hero : availableHeroes) {
             availableHeroesInfoMap.put(hero.getName(), hero.getRole());
@@ -130,7 +137,7 @@ public abstract class OWCompTemplate implements OWCompInterface {
 
         switch (role) {
             case TANK:
-                return currentTank;
+                return currentTanks;
             case DAMAGE:
                 return currentDPS;
             case SUPPORT:

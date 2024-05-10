@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Poke extends OWCompTemplate {
 
     @Override
-    protected void initializePools() {
+    public void initializePools() {
 
         availableHeroes.add(new Hero("Orisa", Role.TANK));
         availableHeroes.add(new Hero("Sigma", Role.TANK));
@@ -34,5 +34,7 @@ public class Poke extends OWCompTemplate {
     public void printCompDetails() {
         System.out.println(
                 "The Poke comp is a long-range team strategy in Overwatch 2, typically consisting of heroes with high damage output and range. It involves maintaining distance from the enemy team while dealing damage from a safe position.");
+        System.out.println();
     }
+
 }

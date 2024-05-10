@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Brawl extends OWCompTemplate {
 
     @Override
-    protected void initializePools() {
+    public void initializePools() {
 
         availableHeroes.add(new Hero("Junker Queen", Role.TANK));
         availableHeroes.add(new Hero("Mauga", Role.TANK));
@@ -37,5 +37,6 @@ public class Brawl extends OWCompTemplate {
     public void printCompDetails() {
         System.out.println(
                 "The Brawl comp is a close-range team strategy in Overwatch 2, typically consisting of heroes with high health pools, high damage output, and strong crowd control abilities. It involves engaging the enemy team in close-quarters combat and using the team's strengths to overpower the enemy.");
+        System.out.println();
     }
 }

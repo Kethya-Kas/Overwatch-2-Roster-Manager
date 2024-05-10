@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Dive extends OWCompTemplate {
 
     @Override
-    protected void initializePools() {
+    public void initializePools() {
 
         availableHeroes.add(new Hero("D.Va", Role.TANK));
         availableHeroes.add(new Hero("Doomfist", Role.TANK));
@@ -33,5 +33,6 @@ public class Dive extends OWCompTemplate {
     public void printCompDetails() {
         System.out.println(
                 "The Dive comp is a high-mobility team strategy in Overwatch 2, involving coordinated dives into enemy backlines to quickly eliminate high-value targets.");
+        System.out.println();
     }
 }
