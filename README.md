@@ -11,6 +11,7 @@ This is a program that creates and manages a roster of Overwatch 2 heroes. Key f
 1. [Installation](#installation)
 2. [Usage](#usage)
 3. [Future Plans](#future_plans)
+4. [Report](#report)
 
 <a name="installation"></a>
 
@@ -40,3 +41,9 @@ This is a program that creates and manages a roster of Overwatch 2 heroes. Key f
 - Give option to create roster without any adhering to the three archetypes
 - Implement either console-based experience or GUI with JavaFX
 - Give more meaningful Exception messages
+
+<a name = "report"></a>
+
+## Report
+
+- Report link: https://docs.google.com/document/d/1Rt68FyEbdxCqF8_EGBTKEV-4bHcQ6G1PPFdL6f8lGNc/edit?usp=sharing
