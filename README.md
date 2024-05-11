@@ -25,9 +25,9 @@ This is a program that creates and manages a roster of Overwatch 2 heroes. Key f
 - Open the project in any IDE
 - Run the program in the RosterMangerTester class
 - You can create a roster through: `OWRoster rosterName = new OWRoster(Archetype.NameOfArchetype);`
-  - Archetypes: Dive, Brawl, Poke
+  - Archetypes: found in Archetype.java (Enum)
 - You can create a Hero through: `Hero heroName = new Hero("name", Role.nameOfRole);`
-  - Roles: TANK, DAMAGE, SUPPORT
+  - Roles: found in Role.java (Enum)
   - HeroNames: [found here](https://overwatch.blizzard.com/en-us/heroes/)
     - This program does not include Roadhog, Pharah, Junkrat, Venture, and Lifeweaver
 
