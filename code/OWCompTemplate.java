@@ -10,12 +10,12 @@ public abstract class OWCompTemplate implements OWCompInterface {
     public Map<Role, ArrayList<Hero>> availableHeroesByRole;
     public HashMap<String, Role> availableHeroesInfoMap;
     private ArrayList<Hero> currentTanks;
-    private ArrayList<Hero> currentDPS;
+    private ArrayList<Hero> currentDamage;
     private ArrayList<Hero> currentSupports;
 
     public OWCompTemplate() {
         currentTanks = new ArrayList<>();
-        currentDPS = new ArrayList<>();
+        currentDamage = new ArrayList<>();
         currentSupports = new ArrayList<>();
         availableHeroes = new ArrayList<>();
         availableHeroesInfoMap = new HashMap<>();
@@ -26,7 +26,7 @@ public abstract class OWCompTemplate implements OWCompInterface {
 
     @Override
     public int getCurrentRosterSize() {
-        return currentTanks.size() + currentDPS.size() + currentSupports.size();
+        return currentTanks.size() + currentDamage.size() + currentSupports.size();
     }
 
     @Override
@@ -80,8 +80,8 @@ public abstract class OWCompTemplate implements OWCompInterface {
             currentTanks.add(getRandomHero(tankPool, random));
         }
 
-        for (int i = 0; i < MAX_DPS; i++) {
-            currentDPS.add(getRandomHero(damagePool, random));
+        for (int i = 0; i < MAX_DAMAGE; i++) {
+            currentDamage.add(getRandomHero(damagePool, random));
         }
 
         for (int i = 0; i < MAX_SUPPORTS; i++) {
@@ -92,7 +92,7 @@ public abstract class OWCompTemplate implements OWCompInterface {
     @Override
     public void clearRoster() {
         currentTanks.clear();
-        currentDPS.clear();
+        currentDamage.clear();
         currentSupports.clear();
     }
 
@@ -107,7 +107,7 @@ public abstract class OWCompTemplate implements OWCompInterface {
         System.out.println();
 
         System.out.print("DAMAGE - ");
-        for (Hero hero : currentDPS)
+        for (Hero hero : currentDamage)
             System.out.print(hero.getName() + " ");
 
         System.out.println();
@@ -139,7 +139,7 @@ public abstract class OWCompTemplate implements OWCompInterface {
             case TANK:
                 return currentTanks;
             case DAMAGE:
-                return currentDPS;
+                return currentDamage;
             case SUPPORT:
                 return currentSupports;
             default:
@@ -152,7 +152,7 @@ public abstract class OWCompTemplate implements OWCompInterface {
             case TANK:
                 return MAX_TANKS;
             case DAMAGE:
-                return MAX_DPS;
+                return MAX_DAMAGE;
             case SUPPORT:
                 return MAX_SUPPORTS;
             default:

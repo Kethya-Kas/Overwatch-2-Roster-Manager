@@ -1,7 +1,7 @@
 public interface OWCompInterface {
 
     int MAX_TANKS = 1;
-    int MAX_DPS = 2;
+    int MAX_DAMAGE = 2;
     int MAX_SUPPORTS = 2;
 
     public abstract int getCurrentRosterSize();

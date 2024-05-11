@@ -28,7 +28,7 @@ This is a program that creates and manages a roster of Overwatch 2 heroes. Key f
   - Archetypes: Dive, Brawl, Poke
 - You can create a Hero through: `Hero heroName = new Hero("name", Role.nameOfRole);`
   - Roles: TANK, DAMAGE, SUPPORT
-  - HeroNames: [found here:](https://overwatch.blizzard.com/en-us/heroes/)
+  - HeroNames: [found here](https://overwatch.blizzard.com/en-us/heroes/)
     - This program does not include Roadhog, Pharah, Junkrat, Venture, and Lifeweaver
 
 <a name="#future_plans"></a>
@@ -39,3 +39,4 @@ This is a program that creates and manages a roster of Overwatch 2 heroes. Key f
 - Refactor code structure into folders/packages
 - Give option to create roster without any adhering to the three archetypes
 - Implement either console-based experience or GUI with JavaFX
+- Give more meaningful Exception messages
